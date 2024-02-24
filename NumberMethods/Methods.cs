@@ -1,6 +1,6 @@
 ﻿namespace NumberMethods
 {
-    public class NumberMethods
+    public class Methods
     {
         public int LowestNumber = 0;
         public int HighestNumber = 0;
