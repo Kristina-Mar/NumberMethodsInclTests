@@ -5,7 +5,6 @@
         public int LowestNumber = 0;
         public int HighestNumber = 0;
         public double Average;
-        private double Sum = 0;
         public int ReturnLowestNumber(int[] numbers)
         {
             LowestNumber = numbers[0]; // This is so that the lowest number doesn't remain 0.
@@ -32,6 +31,7 @@
         }
         public double ReturnAverage(int[] numbers)
         {
+            double Sum = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
                 Sum += numbers[i];
