@@ -2,41 +2,32 @@ namespace NumberMethods.Tests
 {
     public class UnitTest1
     {
-        [Fact]
-        public void TestReturnLowestNumber()
+        [Theory]
+        [InlineData(new int[] { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 }, 1)]
+        [InlineData(new int[] { 2, 2, 4 }, 2)]
+        public void TestReturnLowestNumber(int[] numbers, double result)
         {
             Methods numberMethods = new Methods();
-            int[] numbers = { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 };
             numberMethods.ReturnLowestNumber(numbers);
-            Assert.Equal(1, numberMethods.LowestNumber);
-
-            int[] numbers2 = { 2, 2, 4 };
-            numberMethods.ReturnLowestNumber(numbers2);
-            Assert.Equal(2, numberMethods.LowestNumber);
+            Assert.Equal(result, numberMethods.LowestNumber);
         }
-        [Fact]
-        public void TestReturnHighestNumber()
+        [Theory]
+        [InlineData(new int[] { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 }, 98)]
+        [InlineData(new int[] { 2, 2, 4 }, 4)]
+        public void TestReturnHighestNumber(int[] numbers, double result)
         {
             Methods numberMethods = new Methods();
-            int[] numbers = { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 };
             numberMethods.ReturnHighestNumber(numbers);
-            Assert.Equal(98, numberMethods.HighestNumber);
-
-            int[] numbers2 = { 2, 2, 4 };
-            numberMethods.ReturnHighestNumber(numbers2);
-            Assert.Equal(4, numberMethods.HighestNumber);
+            Assert.Equal(result, numberMethods.HighestNumber);
         }
-        [Fact]
-        public void TestReturnAverage()
+        [Theory]
+        [InlineData(new int[] { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 }, 27.31)]
+        [InlineData(new int[] { 2, 2, 4 }, 2.67)]
+        public void TestReturnAverage(int[] numbers, double result)
         {
             Methods numberMethods = new Methods();
-            int[] numbers = { 1, 5, 8, 7, 98, 35, 25, 4, 11, 15, 58, 56, 32 };
             numberMethods.ReturnAverage(numbers);
-            Assert.Equal(27.31, numberMethods.Average);
-
-            int[] numbers2 = { 2, 2, 4 };
-            numberMethods.ReturnAverage(numbers2);
-            Assert.Equal(2.67, numberMethods.Average);
+            Assert.Equal(result, numberMethods.Average);
         }
     }
 }
